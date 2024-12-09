@@ -6,7 +6,8 @@ import { env } from '$env/dynamic/private';
 import { SYSTEM_MESSAGE } from '$lib/constants';
 
 const google = createGoogleGenerativeAI({
-	apiKey: env.GOOGLE_GENERATIVE_AI_API_KEY
+	apiKey: env.GOOGLE_GENERATIVE_AI_API_KEY,
+	baseURL: env.GOOGLE_GENERATIVE_AI_BASE_URL
 });
 
 export const POST = (async ({ request }) => {
