@@ -1,5 +1,8 @@
 {
 	"name": "gnu-linux-copypastify",
+	"description": "GNU/Linux Copypastify",
+	"license": "MIT",
+	"author": "Podter",
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
