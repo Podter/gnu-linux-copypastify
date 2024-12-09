@@ -7,9 +7,18 @@
 	import { Button } from '$lib/components/ui/button';
 	import { Input } from '$lib/components/ui/input';
 	import { Textarea } from '$lib/components/ui/textarea';
-	import { GNU_COPYPASTA } from '$lib/constants';
+	import { GNU_COPYPASTA, RANDOM_MESSAGES } from '$lib/constants';
 
 	const { completion, input, handleSubmit, isLoading } = useCompletion();
+
+	function randomize() {
+		const text = RANDOM_MESSAGES[Math.floor(Math.random() * RANDOM_MESSAGES.length)];
+		if ($input === text) {
+			randomize();
+		} else {
+			$input = text;
+		}
+	}
 </script>
 
 <main
@@ -18,7 +27,7 @@
 	<div class="space-y-3 text-center">
 		<h1 class="text-2xl font-bold sm:text-3xl md:text-4xl">GNU/Linux Copypastify</h1>
 		<p class="text-sm font-medium text-muted-foreground">
-			Convert any text into GNU/Linux copypasta
+			Turn any debatable text into a GNU/Linux copypasta
 		</p>
 	</div>
 	<form class="flex w-full max-w-sm flex-col items-center space-y-3" on:submit={handleSubmit}>
@@ -38,7 +47,7 @@
 				{/if}
 				Generate
 			</Button>
-			<Button type="button" variant="secondary" disabled={$isLoading}>
+			<Button type="button" variant="secondary" disabled={$isLoading} onclick={randomize}>
 				<DicesIcon size={16} class="mr-2" /> Randomize
 			</Button>
 		</div>

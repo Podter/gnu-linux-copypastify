@@ -11,3 +11,16 @@ export const SYSTEM_MESSAGE = [
 	`Your output must emulate the tone, verbosity, and overly detailed style of this copypasta, adapting it to fit the user's input. Ensure the final response humorously overanalyzes the input subject in an exaggerated manner while maintaining coherence and entertainment. Avoid directly referencing GNU/Linux unless specifically instructed.`,
 	`Keep each response short and direct while maintaining the exaggerated and humorous tone from the base copypasta.`
 ].join('\n\n');
+
+export const RANDOM_MESSAGES = [
+	'Pineapple belongs on pizza',
+	'Aliens are real',
+	'Coke better than Pepsi',
+	'Cereal is a type of soup',
+	'Ketchup is a smoothie',
+	'Students are allowed to nap in class',
+	"Fish can't drown",
+	'It is okay to wear socks with flip-flops',
+	'Half-Life 3 will be released before GTA 6',
+	'South Park is better than Family Guy'
+];
