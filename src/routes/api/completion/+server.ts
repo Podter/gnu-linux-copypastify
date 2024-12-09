@@ -9,11 +9,11 @@ const google = createGoogleGenerativeAI({
 });
 
 export const POST = (async ({ request }) => {
-	const { messages } = await request.json();
+	const { prompt } = await request.json();
 
 	const result = streamText({
 		model: google('gemini-1.5-flash-8b'),
-		messages
+		prompt
 	});
 
 	return result.toDataStreamResponse();

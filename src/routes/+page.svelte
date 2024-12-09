@@ -1,17 +1,10 @@
 <script>
-	import { useChat } from '@ai-sdk/svelte';
-
-	const { input, handleSubmit, messages } = useChat();
+	import { useCompletion } from '@ai-sdk/svelte';
+	const { completion, input, handleSubmit } = useCompletion();
 </script>
 
-<main>
-	<ul>
-		{#each $messages as message}
-			<li>{message.role}: {message.content}</li>
-		{/each}
-	</ul>
-	<form on:submit={handleSubmit}>
-		<input bind:value={$input} />
-		<button type="submit">Send</button>
-	</form>
-</main>
+<form on:submit={handleSubmit}>
+	<input name="prompt" bind:value={$input} id="input" />
+	<button type="submit">Submit</button>
+	<div>{$completion}</div>
+</form>
