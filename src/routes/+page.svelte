@@ -3,6 +3,7 @@
 	import DicesIcon from 'lucide-svelte/icons/dices';
 	import SquarePenIcon from 'lucide-svelte/icons/square-pen';
 
+	import ThemeToggle from '$lib/components/theme-toggle.svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { Input } from '$lib/components/ui/input';
 	import { Textarea } from '$lib/components/ui/textarea';
