@@ -1,15 +1,15 @@
 <script>
 	import { useCompletion } from '@ai-sdk/svelte';
 	import DicesIcon from 'lucide-svelte/icons/dices';
+	import LoaderIcon from 'lucide-svelte/icons/loader';
 	import SquarePenIcon from 'lucide-svelte/icons/square-pen';
 
-	import ThemeToggle from '$lib/components/theme-toggle.svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { Input } from '$lib/components/ui/input';
 	import { Textarea } from '$lib/components/ui/textarea';
 	import { GNU_COPYPASTA } from '$lib/constants';
 
-	const { completion, input, handleSubmit } = useCompletion();
+	const { completion, input, handleSubmit, isLoading } = useCompletion();
 </script>
 
 <main
@@ -22,12 +22,23 @@
 		</p>
 	</div>
 	<form class="flex w-full max-w-sm flex-col items-center space-y-3" on:submit={handleSubmit}>
-		<Input bind:value={$input} name="prompt" id="input" placeholder="Enter your text here" />
+		<Input
+			bind:value={$input}
+			name="prompt"
+			id="input"
+			placeholder="Enter your text here"
+			disabled={$isLoading}
+		/>
 		<div class="grid grid-cols-2 gap-2">
-			<Button type="submit">
-				<SquarePenIcon size={16} class="mr-2" /> Generate
+			<Button type="submit" disabled={$isLoading}>
+				{#if $isLoading}
+					<LoaderIcon size={16} class="mr-2 animate-spin" />
+				{:else}
+					<SquarePenIcon size={16} class="mr-2" />
+				{/if}
+				Generate
 			</Button>
-			<Button type="button" variant="secondary">
+			<Button type="button" variant="secondary" disabled={$isLoading}>
 				<DicesIcon size={16} class="mr-2" /> Randomize
 			</Button>
 		</div>
@@ -35,7 +46,7 @@
 	<Textarea
 		value={$completion}
 		readonly
-		placeholder={`${GNU_COPYPASTA.slice(0, 199)}...`}
+		placeholder={$isLoading ? 'Generating...' : `${GNU_COPYPASTA.slice(0, 199)}...`}
 		class="h-80"
 	></Textarea>
 </main>
