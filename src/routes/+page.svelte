@@ -6,5 +6,5 @@
 <form on:submit={handleSubmit}>
 	<input name="prompt" bind:value={$input} id="input" />
 	<button type="submit">Submit</button>
-	<div>{$completion}</div>
 </form>
+<textarea value={$completion} readonly></textarea>
