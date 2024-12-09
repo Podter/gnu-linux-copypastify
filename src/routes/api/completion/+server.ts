@@ -1,7 +1,7 @@
 import { createGoogleGenerativeAI } from '@ai-sdk/google';
 import { streamText } from 'ai';
-import type { RequestHandler } from './$types';
 
+import type { RequestHandler } from './$types';
 import { env } from '$env/dynamic/private';
 import { SYSTEM_MESSAGE } from '$lib/constants';
 
