@@ -24,3 +24,6 @@ export const RANDOM_MESSAGES = [
 	'Half-Life 3 will be released before GTA 6',
 	'South Park is better than Family Guy'
 ];
+
+export const COPYPASTA_URL =
+	'https://www.gnu.org/gnu/incorrect-quotation.en.html#:~:text=I%27d%20just%20like,system%20they%20use.';

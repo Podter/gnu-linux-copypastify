@@ -7,7 +7,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import { Input } from '$lib/components/ui/input';
 	import { Textarea } from '$lib/components/ui/textarea';
-	import { GNU_COPYPASTA, RANDOM_MESSAGES } from '$lib/constants';
+	import { COPYPASTA_URL, GNU_COPYPASTA, RANDOM_MESSAGES } from '$lib/constants';
 
 	const { completion, input, handleSubmit, isLoading } = useCompletion();
 
@@ -27,7 +27,9 @@
 	<div class="space-y-3 text-center">
 		<h1 class="text-2xl font-bold sm:text-3xl md:text-4xl">GNU/Linux Copypastify</h1>
 		<p class="text-sm font-medium text-muted-foreground">
-			Turn any debatable text into a GNU/Linux copypasta
+			Turn any debatable text into a <a href={COPYPASTA_URL} class="underline underline-offset-4">
+				GNU/Linux copypasta
+			</a>
 		</p>
 	</div>
 	<form class="flex w-full max-w-sm flex-col items-center space-y-3" on:submit={handleSubmit}>
