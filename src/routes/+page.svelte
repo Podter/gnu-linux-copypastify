@@ -4,6 +4,7 @@
 	import LoaderIcon from 'lucide-svelte/icons/loader';
 	import SquarePenIcon from 'lucide-svelte/icons/square-pen';
 
+	import GnuLinux from '$lib/assets/gnu-linux.png?enhanced';
 	import { Button } from '$lib/components/ui/button';
 	import { Input } from '$lib/components/ui/input';
 	import { Textarea } from '$lib/components/ui/textarea';
@@ -24,6 +25,7 @@
 <main
 	class="mx-auto flex min-h-svh w-full max-w-4xl flex-col items-center justify-center space-y-6 p-6"
 >
+	<enhanced:img src={GnuLinux} alt="GNU + Linux" class="h-24 w-24" />
 	<div class="space-y-3 text-center">
 		<h1 class="text-2xl font-bold sm:text-3xl md:text-4xl">GNU/Linux Copypastify</h1>
 		<p class="text-sm font-medium text-muted-foreground">
@@ -61,3 +63,8 @@
 		class="h-80"
 	></Textarea>
 </main>
+
+<svelte:head>
+	<title>GNU/Linux Copypastify</title>
+	<meta name="description" content="Turn any debatable text into a GNU/Linux copypasta" />
+</svelte:head>

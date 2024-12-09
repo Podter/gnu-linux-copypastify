@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Podter from '$lib/components/podter.svelte';
 	import ThemeToggle from '$lib/components/theme-toggle.svelte';
 
 	import '../app.css';
@@ -11,5 +12,7 @@
 <ThemeToggle />
 
 {@render children()}
+
+<Podter />
 
 <ModeWatcher />
